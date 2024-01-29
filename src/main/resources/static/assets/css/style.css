@@ -1,0 +1,205 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #ffffff;
+            color: #000000;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #ffffff 1px solid;
+        }
+
+        header a {
+            color: #000000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header #logo {
+            float: left;
+            display: inline;
+        }
+
+        header #logo img {
+            height: 50px;
+            width: auto;
+            float: left;
+        }
+
+        header #logo a {
+            text-align: center;
+            float: left;
+            display: inline;
+            line-height: 70px;
+        }
+
+        header nav {
+            float: right;
+            display: inline;
+        }
+
+        header .main-nav ul {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header .main-nav li {
+            display: inline;
+            float: left;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        header .main-nav a {
+            color: #000000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        header .main-nav a:hover {
+            color: #C0C0C0;
+        }
+
+        header .main-nav a::before {
+            content: "";
+            width: 0;
+            height: 2px;
+            display: block;
+            background: #C0C0C0;
+            position: absolute;
+            top: 0;
+            transition: all ease-in-out 0.3s;
+        }
+
+        header .main-nav a:hover::before {
+            width: 100%;
+        }
+
+        header #menu-icon {
+            display: none;
+        }
+
+        header .menu-toggle {
+            font-size: 32px;
+            color: #000000;
+            text-decoration: none;
+            float: right;
+            display: inline;
+        }
+
+        header .menu-toggle:hover {
+            color: #C0C0C0;
+        }
+
+        header .main-nav {
+            display: inline;
+            float: right;
+            margin-top: 10px;
+        }
+
+        header .main-nav li {
+            display: inline;
+        }
+
+        header .main-nav a {
+            margin-right: 0px;
+            display: inline-block;
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            header .main-nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                background-color: #ffffff;
+                text-align: center;
+            }
+
+            header .main-nav.showing {
+                display: block;
+            }
+
+            header .main-nav a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                margin: 0;
+            }
+
+            header #menu-icon {
+                display: block;
+                color: #000000;
+                font-size: 26px;
+                float: right;
+                line-height: 70px;
+                cursor: pointer;
+            }
+
+            header .menu-toggle {
+                display: none;
+            }
+        }
+
+        section {
+            overflow: hidden;
+            color: #000000;
+            padding: 10px 0;
+        }
+
+        section h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        section form {
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        section input[type="text"],
+        section input[type="password"],
+        section input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        section input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        section input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        @media only screen and (max-width: 768px) {
+            section form {
+                width: 80%;
+            }
+        }

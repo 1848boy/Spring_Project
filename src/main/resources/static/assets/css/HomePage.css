@@ -1,0 +1,89 @@
+@charset "UTF-8";
+	/* Customize your styles here */
+		html {
+			scroll-behavior: smooth;
+		}
+
+		.navbar {
+			background-color: black;
+			margin-bottom: 25px;
+		}
+
+		.navbar-brand,
+		.navbar-nav .nav-link {
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.top-gap {
+			margin-top: 50px;
+			/* Adjust the margin-top as needed */
+		}
+
+		.navbar-nav .nav-item.dropdown:hover .nav-link {
+			background-color: transparent;
+		}
+
+		.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+			display: block;
+		}
+
+		.navbar-nav {
+			justify-content: space-evenly;
+			/* evenly space the items */
+			width: 100%;
+		}
+
+		.nav-link:hover,
+		.navbar-brand:hover {
+			color: darkorange;
+		}
+
+		.navbar-nav .nav-item {
+			margin-right: 15px;
+			/* adjust as needed */
+		}
+
+		.btn-search {
+			height: fit-content;
+			width: fit-content;
+		}
+
+		.logo:hover {
+			border: 2px solid darkorange;
+			border-radius: 50%;
+			background-color: white;
+		}
+		
+		.qty {
+			display: flex;
+			align-items: center;
+			/* Center vertically */
+			justify-content: center;
+			align-content: space-evenly;
+			/* Center horizontally */
+			margin-top: 5px;
+		}
+
+		.btnminus,
+		.btnplus {
+			/* Add any additional styling for your buttons */
+			padding: 5px 10px;
+			margin: 0 8px;
+			border-radius: 5px;
+			background-color: black;
+			color: white;
+			font-weight: bolder;
+			font-size: 25px;
+			width: 40px
+		}
+
+		td,
+		th {
+			text-align: center;
+		}
+
+		#desc {
+			border: 2px solid grey;
+		}

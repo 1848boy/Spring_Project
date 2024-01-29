@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shopping Kart</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+	<!-- Your other styles go here -->
+	<style>
+		/* Customize your styles here */
+		html {
+			scroll-behavior: smooth;
+		}
+
+		td,
+		th {
+			text-align: center;
+		}
+
+		#desc {
+			border: 2px solid grey;
+		}
+
+		.navbar {
+			background-color: darkorange;
+			margin-bottom: 25px;
+		}
+
+		.navbar-brand,
+		.navbar-nav .nav-link {
+			color: black;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.top-gap {
+			margin-top: 50px;
+			/* Adjust the margin-top as needed */
+		}
+
+		.navbar-nav .nav-item.dropdown:hover .nav-link {
+			background-color: transparent;
+		}
+
+		.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+			display: block;
+		}
+
+		.navbar-nav {
+			justify-content: space-evenly;
+			/* evenly space the items */
+			width: 100%;
+		}
+
+		.nav-link:hover {
+			color: white;
+		}
+
+		.navbar-nav .nav-item {
+			margin-right: 15px;
+			/* adjust as needed */
+		}
+
+		.btn-serach {
+			height: fit-content;
+			width: fit-content;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand">SHOPPING-KART</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="/Home">HOME</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">CART</a>
+				</li>
+
+				<!-- Dropdown with categories -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Categories
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<!-- Use Thymeleaf iteration to populate categories -->
+						<a class="dropdown-item" href="/category/bestsale">Best Selling</a>
+						<a class="dropdown-item" href="/category/womenfashion">Women's Fashion</a>
+						<a class="dropdown-item" href="/category/menfashion">Men's Fashion</a>
+						<a class="dropdown-item" href="/category/electronics">Electronics</a>
+						<a class="dropdown-item" href="/category/womenfootwear">Womens Footwear</a>
+						<a class="dropdown-item" href="/category/menfootwear">Mens FootWear</a>
+						<a class="dropdown-item" href="/category/toys">Toys & Stationery </a>
+						<a class="dropdown-item" href="/category/womenthings"> Womens Accessories</a>
+						<a class="dropdown-item" href="/category/menthings">Mens Accessories</a>
+						<a class="dropdown-item" href="/category/snacks">Snacks</a>
+
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">LogOut</a>
+				</li>
+			</ul>
+
+			<form class="form-inline my-2 my-lg-0">
+				<div class="input-group">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					<div class="input-group-btn">
+						<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</nav>
+
+
+	<table class="table">
+		<tbody>
+			<th:block th:each="pro : ${product}">
+				<tr>
+					<td><img th:src="@{/images/} + ${pro.getimage_url()}" class="card-img-top"
+							alt="Product Image" width="200" height="250"></td>
+					<td th:text="${pro.getproductname()}"></td>
+					<td th:text="${pro.getPrice()}"></td>
+					<td>
+						<div id="desc" th:text="${pro.getdescription()}"></div>
+					</td>
+				</tr>
+		</tbody>
+		</th:block>
+	</table>
+
+</body>
+
+</html>
